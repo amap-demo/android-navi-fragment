@@ -2,8 +2,10 @@
 fragement方式导航示例
 ## 前述 ##
 - [高德官网申请Key](http://lbs.amap.com/dev/#/).
-- 阅读[参考手册](http://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html).
+- 阅读[地图参考手册](http://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html).
+- 阅读[导航参考手册](http://a.amap.com/lbs/static/unzip/Android_Navi_Doc/index.html).
 - [科大讯飞开放平台申请Appid](http://www.xfyun.cn/services/online_tts).
+- 工程基于Android 导航 SDK、科大讯飞在线语音合成SDK实现
 
 ## 使用方法##
 ###1:配置搭建AndroidSDK工程###
