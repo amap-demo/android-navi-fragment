@@ -1,4 +1,4 @@
-# android-navi-fragement
+# android-navi-fragment
 fragement方式导航示例
 ## 前述 ##
 - [高德官网申请Key](http://lbs.amap.com/dev/#/).
