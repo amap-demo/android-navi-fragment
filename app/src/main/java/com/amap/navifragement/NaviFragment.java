@@ -66,7 +66,7 @@ public class NaviFragment extends Fragment implements AMapNaviViewListener {
 
     @Override
     public void onNaviCancel() {
-
+        this.getActivity().finish();
     }
 
     @Override
