@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.amap.navifragement"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         ndk {
@@ -20,15 +20,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.amap.api:navi-solo:latest.integration'
-    compile 'com.amap.api:navi-solo-native:latest.integration'
-    compile 'com.amap.api:map3d-native:latest.integration'
-    compile 'com.amap.api:map3d:latest.integration'
+    compile 'com.amap.api:navi-3dmap:latest.integration'
     compile 'com.android.support:support-v4:25.0.1'
 }
