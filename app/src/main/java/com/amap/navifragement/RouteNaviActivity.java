@@ -69,12 +69,14 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 		//
 		//        停止导航之后，会触及底层stop，然后就不会再有回调了，但是讯飞当前还是没有说完的半句话还是会说完
 		//        mAMapNavi.stopNavi();
+		mAMapNavi.pauseNavi();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		mAMapNavi.stopNavi();
+		mAMapNavi.removeAMapNaviListener(mTtsManager);
 		mTtsManager.destroy();
 	}
 
@@ -222,4 +224,5 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 	public void updateAimlessModeCongestionInfo(AimLessModeCongestionInfo aimLessModeCongestionInfo) {
 
 	}
+
 }
