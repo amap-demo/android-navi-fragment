@@ -3,6 +3,7 @@ package com.amap.navifragement;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,24 +14,24 @@ import com.amap.api.maps.UiSettings;
 import com.amap.api.navi.AMapNavi;
 import com.amap.api.navi.AMapNaviListener;
 import com.amap.api.navi.model.AMapLaneInfo;
+import com.amap.api.navi.model.AMapNaviCameraInfo;
 import com.amap.api.navi.model.AMapNaviCross;
 import com.amap.api.navi.model.AMapNaviInfo;
 import com.amap.api.navi.model.AMapNaviLocation;
 import com.amap.api.navi.model.AMapNaviPath;
-import com.amap.api.navi.model.AMapNaviStaticInfo;
 import com.amap.api.navi.model.AMapNaviTrafficFacilityInfo;
+import com.amap.api.navi.model.AMapServiceAreaInfo;
 import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
 import com.amap.api.navi.model.NaviLatLng;
 import com.amap.api.navi.view.RouteOverLay;
-import com.autonavi.tbt.NaviStaticInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AMapNaviListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements AMapNaviListener, View.OnClickListener, AMap.OnMapLoadedListener {
     /**
      * 导航对象(单例)
      */
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
+        calculateDriveRoute();
     }
 
     private void setUpMapIfNeeded() {
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
             if (uiSettings != null) {
                 uiSettings.setRotateGesturesEnabled(false);
             }
+            mAMap.setOnMapLoadedListener(this);
         }
     }
 
@@ -102,11 +105,12 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
         endList.add(endLatlng);
         mAMapNavi = AMapNavi.getInstance(getApplicationContext());
         mAMapNavi.addAMapNaviListener(this);
-        calculateDriveRoute();
+//        calculateDriveRoute();
     }
 
     private void cleanRouteOverlay() {
         if (mRouteOverlay != null) {
+            mRouteOverlay.removeFromMap();
             mRouteOverlay.destroy();
         }
     }
@@ -190,16 +194,6 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
-    public void onArriveDestination(NaviStaticInfo naviStaticInfo) {
-
-    }
-
-    @Override
-    public void onArriveDestination(AMapNaviStaticInfo aMapNaviStaticInfo) {
-
-    }
-
-    @Override
     public void onCalculateRouteFailure(int i) {
 
     }
@@ -226,6 +220,16 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
 
     @Override
     public void onNaviInfoUpdated(AMapNaviInfo aMapNaviInfo) {
+
+    }
+
+    @Override
+    public void updateCameraInfo(AMapNaviCameraInfo[] aMapNaviCameraInfos) {
+
+    }
+
+    @Override
+    public void onServiceAreaUpdate(AMapServiceAreaInfo[] aMapServiceAreaInfos) {
 
     }
 
@@ -287,5 +291,15 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     @Override
     public void updateAimlessModeCongestionInfo(AimLessModeCongestionInfo aimLessModeCongestionInfo) {
 
+    }
+
+    @Override
+    public void onPlayRing(int i) {
+
+    }
+
+    @Override
+    public void onMapLoaded() {
+//        calculateDriveRoute();
     }
 }
