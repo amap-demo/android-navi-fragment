@@ -3,7 +3,6 @@ package com.amap.navifragement;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -70,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
-        calculateDriveRoute();
     }
 
     private void setUpMapIfNeeded() {
@@ -105,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
         endList.add(endLatlng);
         mAMapNavi = AMapNavi.getInstance(getApplicationContext());
         mAMapNavi.addAMapNaviListener(this);
-//        calculateDriveRoute();
     }
 
     private void cleanRouteOverlay() {
@@ -300,6 +297,6 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
 
     @Override
     public void onMapLoaded() {
-//        calculateDriveRoute();
+        calculateDriveRoute();
     }
 }
