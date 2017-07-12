@@ -121,11 +121,6 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 	}
 
 	@Override
-	public void onCalculateRouteSuccess() {
-
-	}
-
-	@Override
 	public void onCalculateRouteFailure(int i) {
 
 	}
@@ -201,7 +196,7 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 	}
 
 	@Override
-	public void onCalculateMultipleRoutesSuccess(int[] ints) {
+	public void onCalculateRouteSuccess(int[] ints) {
 
 	}
 

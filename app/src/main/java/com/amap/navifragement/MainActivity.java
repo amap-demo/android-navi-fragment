@@ -141,16 +141,6 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-        cleanRouteOverlay();
-        AMapNaviPath path = mAMapNavi.getNaviPath();
-        if (path != null) {
-            drawRoutes(path);
-        }
-        mStartNaviButton.setVisibility(View.VISIBLE);
-    }
-
-    @Override
     public void onInitNaviFailure() {
 
     }
@@ -266,8 +256,13 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-
+    public void onCalculateRouteSuccess(int[] ints) {
+        cleanRouteOverlay();
+        AMapNaviPath path = mAMapNavi.getNaviPath();
+        if (path != null) {
+            drawRoutes(path);
+        }
+        mStartNaviButton.setVisibility(View.VISIBLE);
     }
 
     @Override
