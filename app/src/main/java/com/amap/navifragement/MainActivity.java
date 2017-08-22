@@ -171,6 +171,11 @@ public class MainActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
 
     }

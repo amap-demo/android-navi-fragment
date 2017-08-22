@@ -111,6 +111,11 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 	}
 
 	@Override
+	public void onGetNavigationText(String s) {
+
+	}
+
+	@Override
 	public void onEndEmulatorNavi() {
 
 	}
