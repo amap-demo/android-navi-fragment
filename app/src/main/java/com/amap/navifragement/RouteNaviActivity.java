@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import com.amap.api.navi.AMapNavi;
 import com.amap.api.navi.AMapNaviListener;
 import com.amap.api.navi.model.AMapLaneInfo;
+import com.amap.api.navi.model.AMapModelCross;
 import com.amap.api.navi.model.AMapNaviCameraInfo;
 import com.amap.api.navi.model.AMapNaviCross;
 import com.amap.api.navi.model.AMapNaviInfo;
@@ -187,6 +188,16 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 
 	@Override
 	public void hideCross() {
+
+	}
+
+	@Override
+	public void showModeCross(AMapModelCross aMapModelCross) {
+
+	}
+
+	@Override
+	public void hideModeCross() {
 
 	}
 
