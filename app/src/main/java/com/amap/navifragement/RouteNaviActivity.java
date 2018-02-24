@@ -162,6 +162,11 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 	}
 
 	@Override
+	public void updateIntervalCameraInfo(AMapNaviCameraInfo aMapNaviCameraInfo, AMapNaviCameraInfo aMapNaviCameraInfo1, int i) {
+
+	}
+
+	@Override
 	public void onServiceAreaUpdate(AMapServiceAreaInfo[] aMapServiceAreaInfos) {
 
 	}
@@ -203,6 +208,11 @@ public class RouteNaviActivity extends FragmentActivity implements AMapNaviListe
 
 	@Override
 	public void showLaneInfo(AMapLaneInfo[] aMapLaneInfos, byte[] bytes, byte[] bytes1) {
+
+	}
+
+	@Override
+	public void showLaneInfo(AMapLaneInfo aMapLaneInfo) {
 
 	}
 
